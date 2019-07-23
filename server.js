@@ -1,5 +1,10 @@
 const express = require('express');
 const app = express();
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+const config = require('./config');
+const googleProfile = {};
+
 app.set('view engine', 'pug');
 app.set('views', './views');
 
