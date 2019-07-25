@@ -7,4 +7,7 @@ head
 
 body
     include ./header.pug
-    a(href='/auth/google') Zaloguj do google
+    if(user)
+        h1 Hi, #{user.name}
+    else
+        a(href="/auth/google") Sign Up

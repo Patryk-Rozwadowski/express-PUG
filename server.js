@@ -1,9 +1,19 @@
 const express = require('express');
 const app = express();
+const session = require('express-session');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const config = require('./config');
-const googleProfile = {};
+let googleProfile = {};
+
+app.use(express.static('assets'));
+app.use(express.static('stylesheets'))
+
+app.set('view engine', 'pug');
+app.set('views', './views');
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 passport.serializeUser((user, done) => {
     done(null, user);
@@ -26,18 +36,18 @@ passport.use(new GoogleStrategy({
     }
 ));
 
-app.set('view engine', 'pug');
-app.set('views', './views');
-app.use(passport.initialize());
-app.use(passport.session());
-
 //app routes
-app.get('/', function (req, res) {
+app.get('/', (req, res) => {
     res.render('index', { user: req.user });
 });
 
-app.get('/logged', function (req, res) {
+app.get('/logged', (req, res) => {
     res.render('logged', { user: googleProfile });
+});
+
+app.get('/logout', (req, res) => {
+    req.logout();
+    res.redirect('/')
 });
 
 //Passport routes

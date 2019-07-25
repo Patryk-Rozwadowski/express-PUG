@@ -1,8 +1,8 @@
 {
-  "name": "github-username-searcher",
+  "name": "Google Login",
   "version": "1.0.0",
-  "description": "Github searcher",
-  "main": "js/script.js",
+  "description": "Google Login",
+  "main": "./server.js",
   "scripts": {
     "test": "npm-run-all test:*",
     "test:html": "globstar nu-html-checker *.html",
@@ -18,7 +18,7 @@
     "watch": "npm-run-all -p watch:*",
     "watch:browsersync": "node_modules/.bin/browser-sync --watch",
     "watch:sassprefixer": "onchange sass -- npm-run-all -p watch:sass watch:autoprefixer",
-    "watch:sass": "node_modules/.bin/node-sass --output-style compact -o stylesheets sass ",
+    "watch:sass": "node_modules/.bin/node-sass --output-style compact -o stylesheets sass --watch",
     "watch:autoprefixer": "autoprefixer-cli stylesheets/style.css",
     "start": "http-server",
     "babel-watch": "babel js/script.js --watch --out-file build.js"
@@ -51,6 +51,7 @@
     "babel-preset-react": "^6.24.1",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
+    "express-session": "^1.16.2",
     "nodemon": "^1.19.1",
     "passport": "^0.4.0",
     "passport-google-oauth": "^2.0.0",

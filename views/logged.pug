@@ -3,4 +3,9 @@ html(lang='en')
   head
     title Zalogowano
   body
-    h1 Zalogowano!
+  
+    if(user)
+      h1 Zalogowano jako #{user.displayName}
+      a(href='/logout') Logout
+    else
+      a(href="/sign_up") Sign Up
