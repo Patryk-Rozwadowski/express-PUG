@@ -10,6 +10,7 @@ html(lang='en')
       if(user)
         h1.section-title Zalogowano jako 
         h2.section-title__red #{user.displayName}
+        span.section-title Twoje google id: #{user.id}
         a(href='/logout', class='link-element') Logout
       else
         a(href='/sign_up', class='link-element') Sign Up

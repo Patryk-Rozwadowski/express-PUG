@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,900&display=swap" rel="stylesheet');
 body { background-color: #fff; }
 
-.container { text-align: center; }
+.container { display: grid; text-align: center; }
 
 .section-title, .section-title__red { font-size: 3em; font-weight: 900; font-family: "Roboto", sans-serif; text-align: center; margin: 20px; }
 
 .section-title__red { color: red; }
 
-.google-logo { display: block; margin-left: auto; margin-right: auto; width: 50%; }
+.google-logo { display: block; margin-left: auto; margin-right: auto; width: 30%; }
 
-.link-element { font-size: 2em; font-weight: 300; font-family: "Roboto", sans-serif; text-decoration: none; color: rgba(0, 0, 0, 0.7); }
+.link-element { font-size: 3em; font-weight: 300; font-family: "Roboto", sans-serif; background-color: #222; margin-top: 50px; text-decoration: none; color: #fff; padding: 15px; border-radius: 3px; transition: all 400ms ease; }
+
+.link-element:hover { color: #222; background-color: #fff; border: 1px solid #222; }
 
 * { box-sizing: border-box; }
