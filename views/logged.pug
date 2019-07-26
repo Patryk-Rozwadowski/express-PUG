@@ -2,10 +2,14 @@ doctype html
 html(lang='en')
   head
     title Zalogowano
+    link(rel='stylesheet', type='text/css', href='/style.css')
+    link(rel='stylesheet', type='text/css', href='/reset.css')
+
   body
-  
-    if(user)
-      h1 Zalogowano jako #{user.displayName}
-      a(href='/logout') Logout
-    else
-      a(href="/sign_up") Sign Up
+    main.container
+      if(user)
+        h1.section-title Zalogowano jako 
+        h2.section-title__red #{user.displayName}
+        a(href='/logout', class='link-element') Logout
+      else
+        a(href='/sign_up', class='link-element') Sign Up

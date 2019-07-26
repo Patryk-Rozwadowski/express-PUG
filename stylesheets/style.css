@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,900&display=swap" rel="stylesheet');
+body { background-color: #fff; }
+
+.container { text-align: center; }
+
+.section-title, .section-title__red { font-size: 3em; font-weight: 900; font-family: "Roboto", sans-serif; text-align: center; margin: 20px; }
+
+.section-title__red { color: red; }
+
+.google-logo { display: block; margin-left: auto; margin-right: auto; width: 50%; }
+
+.link-element { font-size: 2em; font-weight: 300; font-family: "Roboto", sans-serif; text-decoration: none; color: rgba(0, 0, 0, 0.7); }
+
+* { box-sizing: border-box; }

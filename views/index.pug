@@ -1,13 +1,15 @@
 doctype html
 html
-head
+  head
     title Logowanie
-    link(rel="stylesheet" type="text/css" href="../stylesheet/style.css")
+    link(rel='stylesheet', type='text/css', href='/style.css')
+    link(rel='stylesheet', type='text/css', href='/reset.css')
 
+  include ./header.pug
+  main.container
+    img(src='./google.png', alt='google icon', class="google-logo")
 
-body
-    include ./header.pug
     if(user)
-        h1 Hi, #{user.name}
+      h1.section-title Hi, #{user.name}
     else
-        a(href="/auth/google") Sign Up
+      a(href="/auth/google", class='link-element') Sign Up!
